@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>zeropy</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"
+            type="text/javascript"></script>
+    <script src="zerocloud.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      ZeroCloudClient.prototype.run = function (code, success) {
+          var headers = {'X-Zerovm-Execute': '1.0'};
+          if (this._token) {
+              headers['X-Auth-Token'] = this._token;
+          }
+          code = '#!file://python:python\n' + code;
+
+          $.ajax({
+              'type': 'POST',
+              'url': this._swiftUrl,
+              'data': code,
+              'headers': headers,
+              'cache': false,
+              'success': (success || $.noop),
+              'contentType': 'application/python',
+          });
+      };
+
+      $(document).ready(function () {
+          client = new ZeroCloudClient();
+          var opts = {{ auth_opts }};
+
+          $('#run').click(function () {
+              client.auth(opts, function () {
+                  client.run($('#code').val(), function (result) {
+                      $('#stdout').text(result);
+                  });
+              });
+          });
+      })
+    </script>
+  </head>
+
+  <body>
+    <h1>zeropy</h1>
+
+    <h2>Input</h2>
+
+    <textarea id="code" rows="12" cols="80">
+print "Hello from ZeroVM"
+    </textarea>
+
+    <p>
+      <input id="run" type="submit" value="Execute" />
+    </p>
+
+    <h2>Output</h2>
+    <pre id="stdout"></pre>
+  </body>
+</html>

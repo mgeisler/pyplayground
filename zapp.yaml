@@ -1,0 +1,24 @@
+execution:
+  groups: []
+
+meta:
+  version: "0.1"
+  name: "zeropy"
+  author: "Martin Geisler"
+  email: "martin@geisler.net"
+  summary: >-
+
+    This Zapp lets you enter a Python script which you can then
+    execute on ZeroCloud. This is simlar to sandboxes used for testing
+    other programming languages, e.g., the Go Playground.
+
+help:
+  description: ""
+  args: []
+
+bundling: []
+
+ui:
+  - index.html
+  - style.css
+  - zerocloud.js
