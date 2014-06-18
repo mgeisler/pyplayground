@@ -1,4 +1,4 @@
-zeropy
+ZeroPy
 ======
 
 This is a small [ZeroVM][1] demo application. It let's you execute
