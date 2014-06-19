@@ -1,5 +1,5 @@
-ZeroPy
-======
+PyPlayground
+============
 
 This is a small [ZeroVM][1] demo application. It let's you execute
 Python code in the ZeroVM sandbox from your browser. This is very
@@ -22,8 +22,15 @@ Then deploy the zapp:
 Then load the `index.html` file in your browser and you should be able
 to execute Python code.
 
+Old Name
+--------
+
+This project was first called ZeroPy, but that name was
+[already taken][5].
+
 
 [1]: http://zerovm.org/
 [2]: http://play.golang.org/
 [3]: https://github.com/zerovm/zergocloud
 [4]: http://docs.zerovm.org/projects/zerovm-zpm/en/latest/
+[5]: https://bitbucket.org/zeropy
