@@ -3,7 +3,7 @@ execution:
 
 meta:
   version: "0.1"
-  name: "zeropy"
+  name: "pyplayground"
   author: "Martin Geisler"
   email: "martin@geisler.net"
   summary: >-
