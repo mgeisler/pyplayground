@@ -9,15 +9,15 @@ code directly from your browser.
 Deployment
 ----------
 
-You need access to an installation of [ZeroCloud][3] to use ZeroPy.
-You deploy ZeroPy using `zpm`. First clone the repository and create
-the `zeropy.zapp` file:
+You need access to an installation of [ZeroCloud][3] to use
+PyPlayground. You deploy PyPlayground using `zpm`. First clone the
+repository and create the `pyplayground.zapp` file:
 
     $ zpm bundle
 
 Then deploy the zapp:
 
-    $ zpm deploy container/zeropy zeropy.zapp
+    $ zpm deploy container/pyplayground pyplayground.zapp
 
 Then load the `index.html` file in your browser and you should be able
 to execute Python code.
