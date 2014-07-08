@@ -19,6 +19,6 @@ help:
 bundling: []
 
 ui:
-  - index.html
+  - index.html.tmpl
   - style.css
   - zerocloud.js
