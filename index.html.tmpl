@@ -52,8 +52,29 @@
 
     <h2>Input</h2>
 
-    <textarea id="code" rows="12" cols="80">
+    <textarea id="code" rows="24" cols="80">
+import math
+
+def primes(n):
+    """
+    Find all primes less than n.
+
+    >>> primes(3)
+    [2]
+    >>> primes(15)
+    [2, 3, 5, 7, 11, 13]
+    """
+    candidates = [True] * n
+    candidates[0] = candidates[1] = False
+    stop = int(math.sqrt(n))
+    for i in range(2, stop + 1):
+        if candidates[i]:
+            for j in range(2 * i, n, i):
+                candidates[j] = False
+    return [i for (i, c) in enumerate(candidates) if c]
+
 print "Hello from ZeroVM"
+print "Primes below 20:", ", ".join(map(str, primes(20)))
     </textarea>
 
     <p>
