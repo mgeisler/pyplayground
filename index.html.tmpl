@@ -46,6 +46,7 @@
 
           $('#run').click(function () {
               client.auth(opts, function () {
+                  $('#stdout').text('... computing ...');
                   client.run(editor.getValue(), function (result) {
                       $('#stdout').text(result);
                   });
